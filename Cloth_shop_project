@@ -1,0 +1,104 @@
+print("================================= Gen-z cloth shop ======================================")
+
+def login():
+    print("\nPlese login first for shoping")
+    l = input("\nEnter your id : ")
+    while True:
+        p = input("Enter a password in 6 digit : ")
+        if len(p) == 6:
+            break
+        else:
+            print("wrong!!!!!!!!!!")
+
+    print("-+-+-+-+-+-+-+-Login complet.-+-+-+-+-+-+-+-")
+login()
+
+men = {
+    "T-shirt": 499,
+    "Shirt": 899,
+    "Jeans": 1299,
+    "Kurta": 799,
+    "Jacket": 1999,
+    "Shorts": 399
+}
+
+women = {
+    "Top": 399,
+    "Kurti": 699,
+    "T-shit": 499,
+    "Saree": 1199,
+    "Jeans": 999,
+    "Dress": 1499
+}
+
+histry = []
+
+def show_clothes(clothe):
+#   print("\n--- MEN CLOTHES ---") 
+  for item, price in clothe.items():
+    print(f"{item} : Rs {price}")
+    
+#   print("\n--- WOMEN CLOTHES ---")
+#   for item, price in women.items():
+#     print(f"{item} : Rs {price}")
+
+
+def order(clothe):
+    total = 0
+    show_clothes(clothe)
+    while True:
+       item =  input("which type clothes do you want(or enter a ok for done) : ")
+       
+       if item.lower()== "ok":
+           break
+       
+       if item in clothe:
+           total += clothe[item]
+           histry.append(item)
+           print(f"add {item} - {clothe[item]}  \n")
+       else:
+           print("wrong!!!!!!!!!!!!!!")
+           
+    return total
+    
+def delivery():
+    print("\n which type dilivery you want :")
+    print("1. 3 days (150 Rs.)")
+    print("2. 7 days (free)")
+    
+    d = input("choice 1 or 2 :")
+    if d == "1":
+        return 150
+    else: 0
+    return 0
+
+
+def aaa():
+    amount = 0 
+    
+    while True:
+        print("\n 1. for men")
+        print("2. for women")
+        print("3. for histry")
+        print("4. for exit")
+        
+        choice = input("\n enter your choice ")
+        
+        if choice=="1":
+            amount +=order(men)
+        elif choice=="2":
+            amount +=order(women) 
+        elif choice=="3":
+            print("histry")
+        elif choice=="4":
+            print("\n bill")
+            
+            amount +=delivery()
+            
+            print(histry)
+            print(f"\n final bill = {amount}")
+            
+            break
+        else:
+            print("invalid!!!!!!!!!!!!")
+aaa()
