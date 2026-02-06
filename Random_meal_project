@@ -1,0 +1,15 @@
+import random
+
+
+brakefast = ["idli", "dosh","poha","kachori","sandwich"]
+lanch = ["paneer chilli" ,"pizza" , "paneer handi","salad","sushi"]
+diner = ["jira-rice" ,"pasta" ,"paneer","tacos","burger"]
+
+a = random.choice(brakefast)
+b = random.choice(lanch)
+c = random.choice(diner)
+
+
+print("Today Brakefast is :",a)
+print("Today Lanch is :",b)
+print("Today Diner is :",c)
