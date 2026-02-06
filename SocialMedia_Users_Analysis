@@ -1,0 +1,20 @@
+instagram  = {"vivek" ,"dhruv" ,"vansh" ,"jainil" ,"arth" , "om"}
+
+facebook = {"vivek" ,"om" ,"vansh" ,"sahil" ,"meet" ,"harsh"}
+
+snapchat = {"vivek1" ,"om" ,"vansh" ,"ronak" ,"meet" ,"harsh"}
+
+inst_fb = facebook & snapchat
+print("only user facebook and sanpchart :" ,inst_fb)
+
+instagram_snap = instagram & snapchat
+print("only use instgram and sanpchart :",instagram_snap)
+
+snap = snapchat -( instagram | facebook )
+print("only  sanpchart :",snap)
+
+face = facebook -( instagram | snapchat )
+print("only facebook :",face)
+
+all = instagram & facebook & snapchat
+print("all  use :",all)
